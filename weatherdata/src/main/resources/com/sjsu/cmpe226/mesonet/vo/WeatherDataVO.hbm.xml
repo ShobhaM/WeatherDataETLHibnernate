@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.sjsu.cmpe226.mesonet.vo.WeatherDataVO" table="wd_weather_data" catalog="weatherdata_schema">
+        <composite-id class= "com.sjsu.cmpe226.mesonet.vo.StationWeatherWithTime" name = "swtObj">
+            <key-property name = "stn" type ="string" column = "stn"/>                
+            <key-property name = "YYMMDDHHMM" type="java.util.Date" column = "create_time"/>
+        </composite-id>        
+        <property name="MNET" type="java.lang.Double">
+            <column name="mnet" length="4" not-null="false"/>
+        </property>
+        <property name="SLAT" type="java.lang.Double">
+            <column name="slat" length="4" not-null="false"/>
+        </property>
+        <property name="SLON" type="java.lang.Double">
+            <column name="slon" length="4" not-null="false"/>
+        </property>
+        <property name="SELV" type="java.lang.Double">
+            <column name="selv" length="4" not-null="false"/>
+        </property>
+        <property name="TMPF" type="java.lang.Double">
+            <column name="tmpf" length="4" not-null="false"/>
+        </property>
+        <property name="SKNT" type="java.lang.Double">
+            <column name="sknt" length="4" not-null="false"/>
+        </property>
+        <property name="DRCT" type="java.lang.Double">
+            <column name="drct" length="4" not-null="false"/>
+        </property>
+        <property name="GUST" type="java.lang.Double">
+            <column name="gust" length="4" not-null="false"/>
+        </property>
+        <property name="PMSL" type="java.lang.Double">
+            <column name="pmsl" length="4" not-null="false"/>
+        </property>
+        <property name="ALTI" type="java.lang.Double">
+            <column name="alti" length="4" not-null="false"/>
+        </property>
+        <property name="DWPF" type="java.lang.Double">
+            <column name="dwpf" length="4" not-null="false"/>
+        </property>
+        <property name="RELH" type="java.lang.Double">
+            <column name="relh" length="4" not-null="false"/>
+        </property>
+        <property name="WTHR" type="java.lang.Double">
+            <column name="wthr" length="14" not-null="false"/>
+        </property>
+        <property name="P24I" type="java.lang.Double">
+            <column name="p24i" length="4" not-null="false"/>
+        </property>
+         <property name="LAST_UPDATE_DATE" type="java.util.Date">
+            <column name="last_update_date" length="45" not-null="false"/>
+        </property>
+        <property name="INSERT_DATE" type="java.util.Date">
+            <column name="insert_date" not-null="false"/>
+        </property>
+    </class>
+</hibernate-mapping>

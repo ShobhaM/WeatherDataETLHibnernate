@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.sjsu.cmpe226.mesonet.vo.WeatherMetaDataVO" table="wd_weather_station_metadata" catalog="weatherdata_schema">
+         
+        <id name="primary_id" type="string">
+            <column name="primary_id" length="80" not-null="false"/>
+        </id>       
+        <property name="secondary_id" type="string">
+            <column name="secondary_id" length="80" not-null="false"/>
+        </property>
+        <property name="station_name" type="string">
+            <column name="station_name" length="280" not-null="false"/>
+        </property>
+        <property name="state" type="string">
+            <column name="state" length="10" not-null="false"/>
+        </property>        
+        <property name="country" type="string">
+            <column name="country" length="10" not-null="false"/>
+        </property>
+        <property name="latitude" type="java.lang.Double">
+            <column name="latitude" length="14" not-null="false"/>
+        </property>
+        <property name="longitude" type="java.lang.Double">
+            <column name="longitude" length="14" not-null="false"/>
+        </property>
+        <property name="elevation" type="java.lang.Double">
+            <column name="elevation" length="14" not-null="false"/>
+        </property>
+        <property name="mesowest_network_id" type="java.lang.Integer">
+            <column name="mesowest_network_id" length="20" not-null="false"/>
+        </property>
+        <property name="network_name" type="string">
+            <column name="network_name" length="80" not-null="false"/>
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="80" not-null="false"/>
+        </property>        
+        <property name="primary_provider_id" type="java.lang.Integer">
+            <column name="primary_provider_id" length="200" not-null="false"/>
+        </property>
+        <property name="primary_provider" type="string">
+            <column name="primary_provider" length="80" not-null="false"/>
+        </property>
+        <property name="secondary_provider_id" type="java.lang.Integer">
+            <column name="secondary_provider_id" length="80" not-null="false"/>
+        </property>
+        <property name="secondary_provider" type="string">
+            <column name="secondary_provider" length="80" not-null="false"/>
+        </property>
+        <property name="tertiary_provider_id" type="java.lang.Integer">
+            <column name="tertiary_provider_id" length="20" not-null="false"/>
+        </property>
+        <property name="tertiary_provider" type="string">
+            <column name="tertiary_provider" length="80" not-null="false"/>
+        </property>
+        <property name="wims_id" type="java.lang.Integer">
+            <column name="wims_id" length="20" not-null="false"/>
+        </property>
+        <property name="LAST_UPDATE_DATE" type="java.util.Date">
+            <column name="LAST_UPDATE_DATE" length="45" not-null="false"/>
+        </property>
+        <property name="INSERT_DATE" type="java.util.Date">
+            <column name="INSERT_DATE" not-null="false"/>
+        </property>
+    </class>
+</hibernate-mapping>
